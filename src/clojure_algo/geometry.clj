@@ -25,7 +25,7 @@
   (let [inputs (partition 2 (range (* 2 n)))
         coords (map (fn [[x y]] {:x x :y y}) inputs)
         points (map map->Point coords)]
-    (time (doall points))
+    (time (dorun points))
     (time (center-gravity coords))
     (time (center-gravity points))
   ))
