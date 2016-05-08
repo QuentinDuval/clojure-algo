@@ -1,7 +1,12 @@
 (ns clojure-algo.geometry
   (:gen-class))
 
-(defrecord Point [x y])
+(set! *warn-on-reflection* true)
+
+(defrecord Point
+  ^{:doc "Docstring do not work directly in defrecord"}
+  ; Type hints here does not help performance"
+  [^long x ^long y])
 
 (defn center-gravity
   "Compute the center of gravity of a set of points"
