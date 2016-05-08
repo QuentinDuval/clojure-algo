@@ -25,12 +25,14 @@
 
 ; For tests only
 
-(defn register-some-customers
-  []
-  (register-customer "Kakrafoon" "Moon")
-  (register-customer "Odile Deray" "Nice")
-  (register-customer "John Doe" "???" {:note "Not sure about his name"}))
-
-(register-some-customers)
-(dorun (map println @customers))
-(group-by-name @customers)
+(comment
+	(defn register-some-customers
+	  []
+	  (register-customer "Kakrafoon" "Moon")
+	  (register-customer "Odile Deray" "Nice")
+	  (register-customer "John Doe" "???" {:note "Not sure about his name"}))
+	
+	(register-some-customers)
+	(dorun (map println @customers))
+	(group-by-name @customers)
+)

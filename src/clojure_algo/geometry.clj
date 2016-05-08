@@ -30,4 +30,4 @@
     (time (center-gravity points))
   ))
 
-(center-gravity-test 100000)
+;(center-gravity-test 100000)
