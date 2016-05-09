@@ -42,7 +42,7 @@
     (collide a1 a2)
     (collide r1 r2)
     (collide a1 r1)
-    (collide r1 a1)
+    (collide r2 a2)
   ))
 
 
