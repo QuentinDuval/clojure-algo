@@ -26,7 +26,7 @@
 (defn group-by-info
   "Group by several information provided by the user"
   [inputs & keys]
-  (let [keys (fn [c] (into [] (map #(%1 %2) keys (repeat c))))
+  (let [keys (fn [c] (into [] ((apply juxt keys) c)))
         grouper (fn [group c] (assoc-in group (keys c) c))]
     (reduce grouper {} inputs)
   ))
