@@ -4,8 +4,9 @@
 
 (defn make-customer
   "Creates a customer as a simple map"
-  [name address & others]
+  [name age address & others]
   {:name name
+   :age age
    :address address
    :other-info others})
 
@@ -36,11 +37,11 @@
 
 (defn run-test
   []
-	(defn register-some-customers
+  (defn register-some-customers
 	  []
-	  (register-customer "Kakrafoon" "Moon")
-	  (register-customer "Odile Deray" "Nice")
-	  (register-customer "John Doe" "???" {:note "Not sure about his name"}))
+    (register-customer "Kakrafoon" 35 "Moon")
+    (register-customer "Odile Deray" 30 "Nice")
+    (register-customer "John Doe" 0 "???" {:note "Not sure about his name"}))
   (reset! customers [])
 	(register-some-customers)
 	(dorun (map println @customers))
