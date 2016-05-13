@@ -10,6 +10,10 @@
    :address address
    :other-info others})
 
+(defn get-birth-date
+  [today {:keys [age]}]
+  (- today age))
+
 (def customers
   "Emulates a DB containing all of our customers"
   (atom []))
@@ -42,10 +46,11 @@
     (register-customer "Kakrafoon" 35 "Moon")
     (register-customer "Odile Deray" 30 "Nice")
     (register-customer "John Doe" 0 "???" {:note "Not sure about his name"}))
-  (reset! customers [])
-	(register-some-customers)
-	(dorun (map println @customers))
-	(group-by-name @customers)
+  (reset! customers []) 
+  (register-some-customers)
+  (dorun (map println @customers))
+  (println (group-by-name @customers))
+  (println (get-birth-date 2016 (@customers 0)))
   (group-by-info @customers :name :address)
 )
 
