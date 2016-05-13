@@ -42,7 +42,7 @@
 (defn run-test
   []
   (defn register-some-customers
-	  []
+    []
     (register-customer "Kakrafoon" 35 "Moon")
     (register-customer "Odile Deray" 30 "Nice")
     (register-customer "John Doe" 0 "???" {:note "Not sure about his name"}))
